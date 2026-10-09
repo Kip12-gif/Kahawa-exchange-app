@@ -1,6 +1,8 @@
-﻿streamlit>=1.30.0
-folium>=0.15.0
-streamlit-folium>=0.18.0
-plotly>=5.18.0
 pandas>=2.0.0
 numpy>=1.24.0
+streamlit>=1.35.0
+folium>=0.16.0
+streamlit-folium>=0.20.0
+plotly>=5.20.0
+geopandas>=0.14.0
+shapely>=2.0.0
