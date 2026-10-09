@@ -1,0 +1,7 @@
+[theme]
+base = "light"
+primaryColor = "#8B4513"          # Warm Saddle Brown Accent
+backgroundColor = "#FDFBF7"       # Soft Cream Background
+secondaryBackgroundColor = "#F4EBE1" # Light Warm Coffee Card Surface
+textColor = "#1C140E"             # Deep Espresso Charcoal Text (High Contrast)
+font = "sans serif"
