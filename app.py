@@ -59,7 +59,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 # ==============================================================================
 # ☕ APP CONTENT
 # ==============================================================================
-st.title("☕ KahwaExchange")
+st.title("☕ KahawaExchange")
 st.subheader("Direct-Trade Kenyan Specialty Coffee Marketplace & DSS Escrow")
 st.caption(
     "Connecting International Specialty Roasters directly with Kenya's finest"
