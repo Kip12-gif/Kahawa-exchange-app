@@ -7,7 +7,7 @@
 
 **KahawaExchange** is an end-to-end B2B digital marketplace bridging the structural gap between **Kenyan Specialty Coffee Cooperatives (FCS) / Estates** and **International Specialty Roasters** (Europe, USA, Asia). 
 
-By integrating Kenya's **Direct Settlement System (DSS)** under the Capital Markets Authority (CMA) framework with real-time **EU Deforestation Regulation (EUDR)** GIS farm boundary validation and a **Micro-Lot Sample Logistics Engine**, KahwaExchange removes disintermediation, streamlines export compliance, and guarantees prompt farmer payouts.
+By integrating Kenya's **Direct Settlement System (DSS)** under the Capital Markets Authority (CMA) framework with real-time **EU Deforestation Regulation (EUDR)** GIS farm boundary validation and a **Micro-Lot Sample Logistics Engine**, KahawaExchange removes disintermediation, streamlines export compliance, and guarantees prompt farmer payouts.
 
 ---
 
@@ -33,7 +33,7 @@ By integrating Kenya's **Direct Settlement System (DSS)** under the Capital Mark
 ## 📂 Repository Structure
 
 ```text
-kahwa-exchange/
+kahawa-exchange/
 ├── .streamlit/
 │   └── config.toml           # UI styling & color palettes
 ├── pages/
