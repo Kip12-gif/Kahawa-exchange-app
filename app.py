@@ -1,4 +1,4 @@
-﻿import plotly.express as px
+import plotly.express as px
 import streamlit as st
 
 st.set_page_config(
@@ -7,12 +7,63 @@ st.set_page_config(
     layout="wide",
 )
 
-# Header Section
-st.title("☕ KahawaExchange")
+# ==============================================================================
+# 🎨 HIGH-CONTRAST LIGHT TEXT & STYLING
+# ==============================================================================
+BACKGROUND_IMAGE_URL = "https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1920&auto=format&fit=crop"
+
+custom_css = f"""
+<style>
+/* Full Page Background Image with Dark Gradient Overlay */
+.stApp {{
+    background: linear-gradient(rgba(12, 8, 6, 0.88), rgba(12, 8, 6, 0.92)),
+                url("{BACKGROUND_IMAGE_URL}");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}}
+
+/* Force Bright White / High-Legibility Light Text for all Elements */
+html, body, [class*="css"], .stMarkdown, p, span, label, h1, h2, h3, h4, h5, h6 {{
+    color: #FFFFFF !important;
+}}
+
+/* Subtitles, Captions & Secondary Labels */
+.stCaption, small, [data-testid="stCaptionContainer"] p {{
+    color: #E2D8D0 !important;
+}}
+
+/* Metric Card Values & Titles */
+[data-testid="stMetricValue"] {{
+    color: #F2A93B !important;
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+}}
+
+[data-testid="stMetricLabel"] p {{
+    color: #E2D8D0 !important;
+    font-weight: 600 !important;
+}}
+
+/* Translucent Glassmorphism Cards with Crisp Golden Borders */
+div[data-testid="stBlock"] {{
+    background-color: rgba(26, 18, 14, 0.82) !important;
+    border-radius: 12px;
+    border: 1px solid rgba(242, 169, 59, 0.3);
+    backdrop-filter: blur(10px);
+}}
+</style>
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
+
+# ==============================================================================
+# ☕ APP CONTENT
+# ==============================================================================
+st.title("☕ KahwaExchange")
 st.subheader("Direct-Trade Kenyan Specialty Coffee Marketplace & DSS Escrow")
-st.markdown(
-    "Connecting International Specialty Roasters with Verified Kenyan"
-    " Cooperatives."
+st.caption(
+    "Connecting International Specialty Roasters directly with Kenya's finest"
+    " Coffee Cooperatives."
 )
 
 st.divider()
@@ -34,12 +85,11 @@ col4.metric(
 
 st.divider()
 
-# Sample Data Visualizations
+# Analytics Visualizations
 left_col, right_col = st.columns([2, 1])
 
 with left_col:
   st.markdown("### 📊 Active Coffee Lots by Grade & Price")
-  # Mock lot inventory dataset
   data = {
       "Cooperative": [
           "Nyeri Hill Co-op",
@@ -61,20 +111,26 @@ with left_col:
       color="Grade",
       hover_name="Cooperative",
       title="Price vs. Quality Matrix (FOB Mombasa)",
+      template="plotly_dark",
+  )
+  fig.update_layout(
+      paper_bgcolor="rgba(0,0,0,0)",
+      plot_bgcolor="rgba(0,0,0,0)",
+      font=dict(color="#FFFFFF"),
   )
   st.plotly_chart(fig, use_container_width=True)
 
 with right_col:
-  st.markdown("### 🚀 Quick Actions")
+  st.markdown("### 🚀 Quick Navigation")
   st.info(
-      "**International Roaster?** Navigate to **Sample Catalog** in the sidebar"
-      " to order green coffee tasting jars."
+      "**International Roaster?** Use the sidebar on the left to explore the"
+      " **Sample Catalog** and order green coffee tasting jars."
   )
   st.success(
-      "**Kenyan Co-op / Miller?** Use the **Coop Dashboard** to upload new"
-      " cupping sheets & warehouse warrants."
+      "**Kenyan Co-op / Miller?** Access the **Coop Dashboard** to list new"
+      " harvest lots."
   )
   st.warning(
-      "**EU Customs Verification:** View **Farm Traceability** for automated"
-      " EUDR boundary polygons."
+      "**EU Imports:** Access **Farm Traceability** to download automated EUDR"
+      " GIS certificates."
   )
